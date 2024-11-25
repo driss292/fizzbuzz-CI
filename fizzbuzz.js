@@ -1,14 +1,16 @@
 const fizzbuzz = (number) => {
-  if (number % 3 == 0 && number % 5 == 0) {
-    return "Fizzbuzz";
+  let result = "";
+  if (number % 3 === 0) {
+    result += "Fizz";
   }
-  if (number % 3 == 0) {
-    return "Fizz";
+  if (number % 5 === 0) {
+    result += "Buzz";
   }
-  if (number % 5 == 0) {
-    return "Buzz";
-  }
-  return number;
+
+  return (
+    `${result.charAt(0).toUpperCase()}${result.slice(1).toLowerCase()}` ||
+    number
+  );
 };
 
 module.exports = { fizzbuzz };
